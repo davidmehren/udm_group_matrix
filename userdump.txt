@@ -1,0 +1,62 @@
+
+DN: uid=Administrator,cn=users,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  PasswordRecoveryEmail: mail@example.com
+  PasswordRecoveryMobile: None
+  birthday: None
+  city: None
+  country: None
+  description: Built-in account for administering the computer/domain
+  disabled: 0
+  displayName: Administrator
+  employeeNumber: None
+  employeeType: None
+  firstname: None
+  gecos: Administrator
+  gidNumber: 5000
+  groups: cn=Domain Admins,cn=groups,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  groups: cn=Domain Users,cn=groups,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  groups: cn=DC Backup Hosts,cn=groups,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  groups: cn=Schema Admins,cn=groups,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  groups: cn=Enterprise Admins,cn=groups,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  groups: cn=Group Policy Creator Owners,cn=groups,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  groups: cn=Administrators,cn=Builtin,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  homeShare: None
+  homeSharePath: None
+  homedrive: None
+  initials: None
+  jpegPhoto: None
+  lastname: Administrator
+  locked: 0
+  lockedTime: 0
+  mailForwardCopyToSelf: 0
+  mailHomeServer: None
+  mailPrimaryAddress: mail@example.com
+  organisation: None
+  overridePWHistory: None
+  overridePWLength: None
+  password: {crypt}$6$/asdf
+  passwordexpiry: None
+  physicalDeliveryOfficeName: None
+  postcode: None
+  preferredDeliveryMethod: None
+  preferredLanguage: None
+  primaryGroup: cn=Domain Admins,cn=groups,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
+  profilepath: None
+  pwdChangeNextLogin: None
+  sambaLogonHours: None
+  sambaRID: 500
+  sambahome: None
+  scriptpath: None
+  shell: /bin/bash
+  street: None
+  title: None
+  uidNumber: 2002
+  umcProperty: appcenterSeen = 2
+  umcProperty: udmUserGridView = default
+  umcProperty: favorites = appcenter:appcenter,updater,udm:users/user,udm:groups/group,udm:computers/computer,apps:admindiary-frontend,udm:navigation
+  unixhome: /home/Administrator
+  unlock: None
+  unlockTime: None
+  userexpiry: None
+  username: Administrator
+  univentionPolicyReference: cn=default-admins,cn=admin-settings,cn=users,cn=policies,dc=beispiel,dc=cs,dc=tu-dortmund,dc=de
