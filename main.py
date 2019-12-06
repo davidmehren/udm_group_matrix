@@ -53,7 +53,7 @@ if __name__ == '__main__':
     print(generate_header())
     for u_index, user in enumerate(user_names):
         print(generate_line(user, u_index))
-    plt.pcolor(matrix, edgecolors='k', cmap="Greys")
+    plt.pcolor(matrix, edgecolors='k', cmap="Greys", vmin=0, vmax=1)
     x_locations = [x + 0.5 for x in range(len(matrix[0]))]
     y_locations = [x + 0.5 for x in range(len(matrix))]
     plt.xticks(x_locations, list(groups), rotation=45, fontsize=4, ha="right")
