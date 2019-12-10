@@ -37,12 +37,6 @@ class LDAPGroupList:
                 return _group
         return None
 
-    def get_max_users(self):
-        _max = 0
-        for group in self.content:
-            _max = max(len(group.members), _max)
-        return _max
-
     def get_user_list(self):
         user_list = set()
         for group in self.content:
