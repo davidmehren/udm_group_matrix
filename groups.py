@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 filtered_users = ["join-backup", "join-slave", "ucs-sso"]
+filtered_groups = ["computers", "dc backup hosts", "dc slave hosts"]
 
 
 class LDAPUser:
@@ -27,7 +28,8 @@ class LDAPGroupList:
         self.content = []
 
     def add(self, group):
-        self.content.append(group)
+        if group.name not in filtered_groups:
+            self.content.append(group)
 
     def get_by_name(self, name):
         for _group in self.content:
@@ -135,8 +137,8 @@ def paint_matrix(groups: LDAPGroupList):
     plt.pcolor(matrix.T, edgecolors='k', cmap="Greys", vmin=0, vmax=1)
     x_locations = [x + 0.5 for x in range(x_count)]
     y_locations = [x + 0.5 for x in range(y_count)]
-    plt.xticks(x_locations, [group.name for group in groups.content], rotation=45, fontsize=4, ha="right")
-    plt.yticks(y_locations, [user.name for user in user_list], fontsize=4)
+    plt.xticks(x_locations, [group.name for group in groups.content], rotation=45, fontsize=6, ha="right")
+    plt.yticks(y_locations, [user.name for user in user_list], fontsize=6)
     plt.tight_layout()
     plt.savefig("groups.png", dpi=300)
 
