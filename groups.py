@@ -137,10 +137,10 @@ def paint_matrix(groups: LDAPGroupList):
     plt.pcolor(matrix.T, edgecolors='k', cmap="Greys", vmin=0, vmax=1)
     x_locations = [x + 0.5 for x in range(x_count)]
     y_locations = [x + 0.5 for x in range(y_count)]
-    plt.xticks(x_locations, [group.name for group in groups.content], rotation=45, fontsize=6, ha="right")
-    plt.yticks(y_locations, [user.name for user in user_list], fontsize=6)
+    plt.xticks(x_locations, [group.name for group in groups.content], rotation=45, fontsize=4, ha="right")
+    plt.yticks(y_locations, [user.name for user in user_list], fontsize=2)
     plt.tight_layout()
-    plt.savefig("groups.png", dpi=300)
+    plt.savefig("groups.png", dpi=600)
 
 
 if __name__ == '__main__':

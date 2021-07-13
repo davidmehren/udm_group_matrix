@@ -58,6 +58,6 @@ if __name__ == '__main__':
     x_locations = [x + 0.5 for x in range(len(matrix[0]))]
     y_locations = [x + 0.5 for x in range(len(matrix))]
     plt.xticks(x_locations, list(groups), rotation=45, fontsize=4, ha="right")
-    plt.yticks(y_locations, user_names, fontsize=4)
+    plt.yticks(y_locations, user_names, fontsize=2)
     plt.tight_layout()
-    plt.savefig("matrix.png", dpi=300)
+    plt.savefig("matrix.png", dpi=600)
