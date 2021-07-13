@@ -17,6 +17,9 @@ class LDAPUser:
     def __eq__(self, o: 'LDAPUser') -> bool:
         return self.name == o.name
 
+    def __lt__(self, o: 'LDAPUser') -> bool:
+        return self.name < o.name
+
     def __hash__(self) -> int:
         return self.name.__hash__()
 
@@ -46,11 +49,11 @@ class LDAPGroupList:
     def tidy(self):
         new_content = []
         for group in self.content:
-            if group.samba_rid < 1000:
+            if group.samba_rid < 0:
                 continue
             if len(group.members) > 0:
                 new_content.append(group)
-        self.content = new_content
+        self.content = sorted(new_content)
 
 
 class LDAPGroup:
@@ -67,6 +70,9 @@ class LDAPGroup:
         for _group in self.subgroups:
             _repr = _repr + f"    {_group}\n"
         return _repr
+
+    def __lt__(self, o: 'LDAPGroup') -> bool:
+        return self.name < o.name
 
     def __init__(self, name: str):
         self.name = name.lower()
@@ -120,7 +126,7 @@ def read_groupdump():
 
 
 def paint_matrix(groups: LDAPGroupList):
-    user_list = groups.get_user_list()
+    user_list = sorted(groups.get_user_list(), reverse=True)
     x_count = len(groups.content)
     y_count = len(user_list)
     matrix = np.zeros((x_count, y_count))
